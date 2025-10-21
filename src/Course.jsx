@@ -1,11 +1,10 @@
-const course1 = "HTML";
-
-function Course(){
+function Course(props){
     return (
         <div className="course">
-            <img></img>
-            <h3>{course1}</h3>
-            <p>This is code My HTML Course</p>
+            <img src={props.img} alt=""></img>
+            <h3>{props.course}</h3>
+            <p>{props.o_price}</p>
+            <label>{props.n_price}</label>
         </div>
     );
 }

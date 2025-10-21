@@ -5,13 +5,16 @@ import './App.css'
 import Navbar from './NavBar';
 import Course from './Course';
 import Footer from './Footer';
+import html from './assets/html.png'
+import css from './assets/css.png'
+import js from './assets/js.png'
 function App() {
 
   return (
     <>
-      <Navbar/>
-      <Course/>
-      <Footer/>
+      <Course img={html} course="HTML" o_price="$ 499" n_price="$ 299"/>
+      <Course img={css} course="css" o_price="$ 299" n_price="$ 199"/>
+      <Course img={js} course="js" o_price="$ 299" n_price="$ 149"/>
     </>
   );
 }
