@@ -1,10 +1,20 @@
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
+import { useState } from 'react';
 
 function Course(props) {
 
-  function BuyCourse(discount,e){
+  // Using Hooks
+  const [purchased,setPurchased] = useState(false);
+  const [applydiscount,setDiscount] = useState(false);
+
+
+  function BuyCourse(discount){
     console.log(props.course,"Purchased with",discount,"% discount");
-    console.log(e)
+    setPurchased(true);
+
+  }
+  function Applydiscount(discount){
+    setDiscount(true);
   }
 
   return (
@@ -12,8 +22,9 @@ function Course(props) {
     props.course && <div className="card">
       <img src={props.img}></img>
       <h3>{props.course}</h3>
-      <p>{props.o_price}</p>
-      <label>{props.n_price}</label>
+      <button onClick={() => Applydiscount(20)}>Apply Discount</button>
+      {/* <p>{props.o_price}</p> */}
+      <label>{applydiscount ? "$"+props.n_price : props.o_price}</label>
       <br />
       <span>{props.rating}</span>
       {/* Basic function call */}
@@ -25,7 +36,8 @@ function Course(props) {
       the following is a multi-line arrow function 
       (event) => {BuyCourse(20,event);console.log(event)}
       */}
-      <button onClick={(event) => {BuyCourse(20,event);console.log(event)}}>Buy Now</button>
+      <button onClick={() => BuyCourse(20)}>{purchased ? "Purchased" : "Buy Now"}</button>
+      
     </div>
   );
 }
