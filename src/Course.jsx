@@ -1,9 +1,9 @@
-import altimg from './assets/alt.png';
 import PropTypes from 'prop-types';
 
 function Course(props) {
   return (
-    <div className="card">
+    // Content Filtering using Logical Operator
+    props.course && <div className="card">
       <img src={props.img}></img>
       <h3>{props.course}</h3>
       <p>{props.o_price}</p>
