@@ -1,4 +1,4 @@
-.course{
+.card{
   background-color: aliceblue;
   width: 200px;
   border-radius: 5px;
@@ -9,12 +9,12 @@
   text-align: center;
   display: inline-block;
 }
-.course img{
+.card img{
   width: 200px;
   /* height: 100px; */
 
 }
 
-.course p{
+.card p{
   text-decoration: line-through;
 }

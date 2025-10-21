@@ -12,9 +12,9 @@ function App() {
 
   return (
     <>
-      <Course img={html} course="HTML" o_price="$ 499" n_price="$ 299"/>
-      <Course img={css} course="css" o_price="$ 299" n_price="$ 199"/>
-      <Course img={js} course="js" o_price="$ 299" n_price="$ 149"/>
+      <Course img={html} course="HTML" o_price="$ 499" n_price="$ 299" rating="4.5" show={false}/>
+      <Course img={css} course="CSS" o_price="$ 299" n_price="$ 199" rating="3.9" show={true}/>
+      <Course img={js} course="JavaScript" o_price="$ 299" n_price="$ 149" rating="4.2" show={true}/>
     </>
   );
 }
