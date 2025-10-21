@@ -18,7 +18,7 @@ Course.PropTypes = {
   img: PropTypes.string,
   course: PropTypes.string,
   o_price: PropTypes.string,
-  n_price: PropTypes.string,
+  n_price: PropTypes.int,
   rating: PropTypes.string,
   show: PropTypes.bool,
 };
