@@ -45,13 +45,13 @@ function CourseList() {
     // courses.sort((x,y) => x.n_price - y.n_price)
 
     // Sort the data by rating
-    courses.sort((x,y) => x.rating-y.rating)
+    // courses.sort((x,y) => x.rating-y.rating)
 
     // Filter the data
-    const under_200 = courses.filter((course) => course.n_price <= 200)
+    // const under_200 = courses.filter((course) => course.n_price <= 200)
 
-// Mapping the data to Course element
-    const CourseList = under_200.map((course) => 
+    // Mapping the data to Course element
+    const CourseList = courses.map((course) => 
     <Course 
     key={course.id} 
      img={course.img} 
