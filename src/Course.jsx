@@ -37,7 +37,7 @@ function Course(props) {
       (event) => {BuyCourse(20,event);console.log(event)}
       */}
       <button onClick={() => BuyCourse(20)}>{purchased ? "Purchased" : "Buy Now"}</button>
-      
+      <button onClick={props.handle_delete}>Delete</button>
     </div>
   );
 }

@@ -2,11 +2,12 @@ import html from "./assets/html.png";
 import css from "./assets/css.png";
 import js from "./assets/js.png";
 import Course from "./Course";
+import { useEffect, useState } from "react";
 
 // Data List
 
 function CourseList() {
-  const courses = [
+  const [courses, setCourses] = useState([
     {
       id: 1,
       img: html,
@@ -39,8 +40,28 @@ function CourseList() {
       n_price: 149,
       rating: "4.5",
     },
-  ];
+  ]);
 
+// UseEffect is called when the state of a variable changes
+
+  useEffect(()=>{
+      console.log("Use Effect Called");
+      console.log(courses); // State variables can be accessed
+      // Using set methods are not recommended since they cause infinite loops
+  });
+/*
+UseEffect is called when only if the state of a variable is changed
+UseEffect(function,[dependencies]) - runs only if the dependencies state is changed
+UseEffect(function,[]) - runs only when the page is loaded after that it won't run
+UseEffect(function) - run when any variable state is changed
+
+*/
+
+  function HandleDelete(id){
+    console.log(id);
+    const afterDeletion = courses.filter((course) => course.id != id);
+    setCourses(afterDeletion);
+  };
   // Sort the data by price
   // courses.sort((x,y) => x.n_price - y.n_price)
 
@@ -59,6 +80,7 @@ function CourseList() {
       o_price={course.o_price}
       n_price={course.n_price}
       rating={course.rating}
+      handle_delete = {()=> HandleDelete(course.id)}
     />
   ));
 
