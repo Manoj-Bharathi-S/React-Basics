@@ -1,11 +1,12 @@
 import Course from "./Course";
 import useFetch from "./useFetch";
 
+
 function CourseList() {
   // Destructuring the data from the useFetch
-
-  const [courses, error] = useFetch("http://localhost:3000/courses");
   
+  const [courses, error] = useFetch("http://localhost:3000/courses");
+
   if (!courses) {
     return (
       <>
@@ -19,11 +20,6 @@ function CourseList() {
     );
   }
 
-  function HandleDelete(id) {
-    console.log(id);
-    const afterDeletion = courses.filter((course) => course.id != id);
-    setCourses(afterDeletion);
-  }
 
   // Mapping the data to Course element
   const CourseList = courses.map((course) => (

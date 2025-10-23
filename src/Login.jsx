@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const Login = () => {
 
     const [pwd1,setPwd1] = useState("")
@@ -20,6 +20,7 @@ const Login = () => {
     };
 
   return (
+    <><Link className="btn btn-primary" to="/">Home</Link>
     <form className='my-5' style={{width:"50%",margin:"auto"}}>
         <div className="mb-3">
             <label className="form-label">Email address</label>
@@ -41,6 +42,7 @@ const Login = () => {
 
         <button type="submit" className="btn btn-primary">Submit</button>
 </form>
+</>
   );
 }
 
