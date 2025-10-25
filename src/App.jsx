@@ -8,6 +8,7 @@ function App() {
     <>
       <CourseList/>
       <Link className="btn btn-primary" to="/login">Login</Link>
+      <Link className="btn btn-primary" to="/counter">Counter</Link>
     </>
   );
 }

@@ -5,6 +5,7 @@ import App from './App.jsx'
 import Login from './Login.jsx'
 import PageNotFound from './PageNotFound.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import Counter from './Counter.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
   {
     path:'/login',
     element:<Login/>,
+    errorElement:<PageNotFound/>
+  },
+  {
+    path:'/counter',
+    element:<Counter/>,
     errorElement:<PageNotFound/>
   }
 ])

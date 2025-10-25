@@ -6,8 +6,13 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    
+    // Creating a controller object
+    const controller = new AbortController();
+    const signal = controller.signal;
+    // Passing the signal object with the fetch to find the state
     setTimeout(() => {
-      fetch(url)
+      fetch(url,{signal})
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -26,7 +31,13 @@ const useFetch = (url) => {
             setError(error.message);
           }
         });
-    }, 2000);
+    }, 5000);
+
+
+    return ()=>{
+      console.log("Unmounted, Cleaning Up");
+      controller.abort();
+    }
   }, []);
   return [data,error]
 };
