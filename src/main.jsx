@@ -7,6 +7,8 @@ import PageNotFound from './PageNotFound.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Counter from './Counter.jsx'
 import Home from './Home.jsx'
+import Posts from './posts.jsx'
+import Post from './post.jsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,16 @@ const router = createBrowserRouter([
     {
     path:'/home',
     element:<Home/>,
+    errorElement:<PageNotFound/>
+  },
+    {
+    path:'/posts',
+    element:<Posts/>,
+    errorElement:<PageNotFound/>
+  },
+    {
+    path:'/post/:id',
+    element:<Post/>,
     errorElement:<PageNotFound/>
   }
 ])
