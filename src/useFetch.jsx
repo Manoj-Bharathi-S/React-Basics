@@ -11,7 +11,6 @@ const useFetch = (url) => {
     const controller = new AbortController();
     const signal = controller.signal;
     // Passing the signal object with the fetch to find the state
-    setTimeout(() => {
       fetch(url,{signal})
         .then((response) => {
           if (!response.ok) {
@@ -31,7 +30,7 @@ const useFetch = (url) => {
             setError(error.message);
           }
         });
-    }, 5000);
+    
 
 
     return ()=>{

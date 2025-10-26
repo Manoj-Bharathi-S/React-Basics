@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react';
+import { dataContext } from './Home';
+
 const Counter = () => {
 
+    const data = useContext(dataContext)
     const [count, setCount] = useState(0);
 
     // React's Batch updation prevents the value from updating twice
@@ -14,6 +17,7 @@ const Counter = () => {
 
   return (
     <>
+    <h1 className='mx-5'>{data}</h1>
     <div className='mx-5'>{count}</div>
     <button className='mx-5' onClick={inc}>Up</button>
     </>
